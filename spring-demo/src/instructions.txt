@@ -1,0 +1,6 @@
+1. Right click on main and create a resources directory.
+
+2. Update pom.xml with the correct dependencies, spring core, spring context, lombok
+
+3. Create a Beans.xml file under the resources folder.
+https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html
