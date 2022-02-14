@@ -69,4 +69,12 @@ public class Pokemon {
                 ", level=" + level +
                 '}';
     }
+
+    public void init() {
+        System.out.println("Initializing pokemon bean!");
+    }
+
+    public void cleanup() {
+        System.out.println("No clean up needed, but this is where we would do it.");
+    }
 }
