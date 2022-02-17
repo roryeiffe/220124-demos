@@ -39,7 +39,7 @@ We can examine the contents of the Dockerfile one by one:
 - ```FROM node:12-alpine``` specifies that the node:12-alpine image is the parent image from which we are building our own image.
 - ```RUN apk add --no-cache python2 g++ make``` allows us to run the specified command.
 - ```WORKDIR /app``` sets our default working directory to the folder "app".
-- ```COPY . .``` copies the path from the context into the container 
+- ```COPY . .``` copies the path from the context into the container.
 - ```RUN yarn install --production``` uses yarn to install the application's dependencies.
 - ```CMD ["node", "src/index.js"]``` specifies the default command to run when starting a container from this image. In this case, we use node to start up the website. 
 
