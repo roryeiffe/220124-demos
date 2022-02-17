@@ -21,7 +21,7 @@ Navigate to Docker Desktop and we should see the container on our list of contai
 
 1. A container is pretty useless if don't have any code to run, so let's download the (app)[https://github.com/docker/getting-started/tree/master/app]. 
 
-2. Create a file named "Dockerfile" in the directory with the "package.json" file. Make sure there are no file extensions (.txt, .md, etc.). It should just be "Dockerfile"). 
+2. Create a file named "Dockerfile" in the directory with the "package.json" file. Make sure there are no file extensions (.txt, .md, etc.). It should just be "Dockerfile"). Put this in the file:
 
 ```
 # syntax=docker/dockerfile:1
@@ -34,6 +34,14 @@ CMD ["node", "src/index.js"]
 ```
 
 Even if we don't have Node on our machine, the image will be downloaded so we can still run the app.
+
+We can examine the contents of the Dockerfile one by one:
+- ```FROM node:12-alpine``` specifies that the node:12-alpine image is the parent image from which we are building our own image.
+- ```RUN apk add --no-cache python2 g++ make``` allows us to run the specified command.
+- ```WORKDIR /app``` sets our default working directory to the folder "app".
+- ```COPY . .``` copies the path from the context into the container 
+- ```RUN yarn install --production``` uses yarn to install the application's dependencies.
+- ```CMD ["node", "src/index.js"]``` specifies the default command to run when starting a container from this image. In this case, we use node to start up the website. 
 
 3. Open a bash terminal in the same directory as the newly created Dockerfile and run ```docker build -t getting-started .``` We can replace "getting-started" with anything, this is just the name of the container, as flagged by "-t". Here we are building the image from the Dockerfile. 
 
