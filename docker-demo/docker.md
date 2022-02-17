@@ -24,7 +24,7 @@ Containerization helps to ensure the application or set of processes can run rel
 
 Taken from [https://docs.docker.com/get-started/overview/](here). We see from the diagram that the client communicates with the Docker daemon which then performs the building, running, and distributing of the Docker containers. 
 
-![Docker Architecture](architectue.png)
+![Docker Architecture](architecture.png)
 
 ## Containers vs Virtual Machines (VMs)
 
@@ -59,4 +59,4 @@ These are the commands that you can run in your terminal to build and run docker
 - docker push - pushes an image to a registry
 - docker ps - lists all containers
 
-Find more commands (here)[https://docs.docker.com/engine/reference/commandline/docker/]
+Find more commands [https://docs.docker.com/engine/reference/commandline/docker/](here)
