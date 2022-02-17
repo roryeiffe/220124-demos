@@ -52,3 +52,44 @@ docker run -dp 3000:3000 getting-started
 in the terminal. Here we are running the container based on the image that we already created. 
 
 5. Navigate to http://localhost:3000 and you should be able to interact with the website, with no need to install any of the required technologies manually!
+
+## Docker Hub Tutorial
+
+1. Create a Docker [account](https://hub.docker.com/signup) and sign in. 
+
+2. Create a repository on Docker Hub and give it a fitting name (test-repo, etc.)
+
+3. Install Docker Desktop if you haven't already and sign in using your new account. 
+
+4. Create a container image using a Dockerfile. 
+
+```
+FROM busybox
+CMD echo "My first Docker Image."
+```
+
+5. Run some commands:
+```
+docker build -t <your_username>/<repo-name> . 
+
+docker run <your_username>/<repo-name>
+
+docker push <your_username>/<repo-name>
+```
+
+6. You should see your image on Docker Hub by navigating to your repositories on the Docker Hub website. 
+
+7. To pull an image from Docker Hub, we can do
+
+```
+docker pull <username>/<repo-name
+```
+
+We can use rocker/verse as an example. Finally, type out 
+
+```
+docker images
+```
+
+and confirm that we can see rocker/verse on the list. 
+

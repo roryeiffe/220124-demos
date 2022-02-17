@@ -14,6 +14,7 @@ Containerization helps to ensure the application or set of processes can run rel
 1. Image - an immutable file that contains the source code, libraries, and everyting else an application needs to run. 
 2. Container - a virutalized run-time environment that is isolated from the host system as well as other containers
 3. Dockerfile - includes the commands used to assemble an image
+4. Docker [daemon](https://docs.docker.com/config/daemon/) - long runnin process that is responsible for manaing Docker objects, listens for calls from the exposed REST API to manage containers, images, volumes, etc. 
 
 ## Docker Benefits
 1. Lightweight - Docker only installs the dependencies that are required for the given container, doesn't include its own operating system. Therefore Docker containers are much quicker to create and start than virtual machines. 
@@ -77,5 +78,7 @@ Docker containers have a "virtual file system", meaning that when a container st
 
 Read more about [Docker storage](https://docs.docker.com/storage/) and [volumes](https://docs.docker.com/storage/volumes/)
 
-## Docker Daemons
+## Docker Hub
+
+Docker Hub lets you share container images with your team. Users get access to free public repositories. 
 
