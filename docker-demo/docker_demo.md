@@ -15,7 +15,7 @@ docker run -d -p 80:80 docker/getting-started
 
 Navigate to Docker Desktop and we should see the container on our list of containers. To see what's happening, hover over the container and click on "Open in Browser". You should be able to see a page that looks like this:
 
-![Tutorial Page](tutorial_page.png)
+![Tutorial Page](images/tutorial_page.png)
 
 ## Building a Container
 

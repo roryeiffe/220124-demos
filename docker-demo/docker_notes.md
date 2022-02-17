@@ -24,16 +24,18 @@ Containerization helps to ensure the application or set of processes can run rel
 
 Taken from [https://docs.docker.com/get-started/overview/](here). We see from the diagram that the client communicates with the Docker daemon which then performs the building, running, and distributing of the Docker containers. 
 
-![Docker Architecture](architecture.png)
+![Docker Architecture](images/architecture.png)
+
+A Docker image contains multiple layers. When a Docker image is rebuilt, only the changed layers are rebuilt, therefore making Docker images and containers more lightweight. 
 
 ## Containers vs Virtual Machines (VMs)
 
 Containers are much more ligthweight than VMs. They are built on top of the host operating system's kernel. They only contain Apps and Services. 
 
-![Container Architecture](container.png)
+![Container Architecture](images/container.png)
 
 Virtual Machines run a complete operating system, including its own kernel.
-![Virtual Machine Architecture](vm.png)
+![Virtual Machine Architecture](images/vm.png)
 
 
 ## Dockerfile
@@ -60,3 +62,20 @@ These are the commands that you can run in your terminal to build and run docker
 - docker ps - lists all containers
 
 Find more commands [https://docs.docker.com/engine/reference/commandline/docker/](here)
+
+## Docker Compose
+
+Compose is used for creating and running multi-container applications. Once you configure the application's services via a YAML file, you can start up all the services will a single command. 
+
+1. Define the app's environment with a Dockerfile. 
+2. Define the services that make up your app in docker-compose.yml. 
+3. Run ```docker compose up```. 
+
+## Docker Volumes
+
+Docker containers have a "virtual file system", meaning that when a container stops, its data is lost. Docker volumes allows us to persist the data on the host machine so it is not lost. There are other ways to persist data, such as mounts. However, Volumes persist data to the part of the host filesystem that is managed by Docker. Therefore volumes are the most recommended way to persist data in Docker. 
+
+Read more about [Docker storage](https://docs.docker.com/storage/) and [volumes](https://docs.docker.com/storage/volumes/)
+
+## Docker Daemons
+
