@@ -19,7 +19,7 @@ Navigate to Docker Desktop and we should see the container on our list of contai
 
 ## Building a Container
 
-1. A container is pretty useless if don't have any code to run, so let's download the (app)[https://github.com/docker/getting-started/tree/master/app]. 
+1. A container is pretty useless if don't have any code to run, so let's download the [app](https://github.com/docker/getting-started/tree/master/app). 
 
 2. Create a file named "Dockerfile" in the directory with the "package.json" file. Make sure there are no file extensions (.txt, .md, etc.). It should just be "Dockerfile"). Put this in the file:
 
@@ -82,10 +82,16 @@ docker push <your_username>/<repo-name>
 7. To pull an image from Docker Hub, we can do
 
 ```
-docker pull <username>/<repo-name
+docker pull <username>/<repo-name>
 ```
 
-We can use rocker/verse as an example. Finally, type out 
+We can use rocker/verse as an example. 
+
+```
+docker pull rocker/verse
+```
+
+Finally, type out 
 
 ```
 docker images

@@ -72,11 +72,13 @@ Compose is used for creating and running multi-container applications. Once you 
 2. Define the services that make up your app in docker-compose.yml. 
 3. Run ```docker compose up```. 
 
+More on [Docker Compose](https://docs.docker.com/compose/). 
+
 ## Docker Volumes
 
 Docker containers have a "virtual file system", meaning that when a container stops, its data is lost. Docker volumes allows us to persist the data on the host machine so it is not lost. There are other ways to persist data, such as mounts. However, Volumes persist data to the part of the host filesystem that is managed by Docker. Therefore volumes are the most recommended way to persist data in Docker. 
 
-Read more about [Docker storage](https://docs.docker.com/storage/) and [volumes](https://docs.docker.com/storage/volumes/)
+Read more about [Docker Storage](https://docs.docker.com/storage/) and [Volumes](https://docs.docker.com/storage/volumes/)
 
 ## Docker Hub
 
