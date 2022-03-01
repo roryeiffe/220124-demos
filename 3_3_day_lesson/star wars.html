@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars</title>
+</head>
+<body>
+    <button onclick = "getData()">Get Data</button>
+    <div class = "characters" id = "characters">
+        
+    </div>
+
+    <script>
+        getData = () => {
+            var request = new XMLHttpRequest();
+
+            request.open("GET", "https://swapi.dev/api/people", true);
+
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var response = JSON.parse(this.responseText);
+                    var characters = response.results;
+
+                    html_chunk = ""
+                    for(i in characters) {
+                        let character = characters[i];
+                        // adding more html code to the chunk
+                        html_chunk += "<h1>" + character.name + "</h1>";
+                        html_chunk += "<h2>" + character.height + "</h2>";
+
+                        // Challenge: Try to access some of the other attributes and
+                        // print those out as well, try to make it as pretty as possible
+                        // hints: tables, images, grid system
+
+                    }
+                    // add the chunk to the main body
+                    document.getElementById('characters').innerHTML = html_chunk;
+                }
+            }
+
+            // send the request:
+            request.send();
+        }
+
+    </script>
+</body>
+</html>

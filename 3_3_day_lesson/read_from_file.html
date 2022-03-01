@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading from a file</title>
+</head>
+
+<body>
+    <h1>Why did the Chicken Cross the Road?</h1>
+    <button onclick = getData()>View Punchline</button>
+    <h1 id="punchline"></h1>
+
+    <script>
+        function getData() {
+            // create XMLHttpRequest object
+            // create XMLHttpRequest object
+            var request = new XMLHttpRequest();
+
+            // instantiate the request object
+            // open(method_type, url, async)
+            request.open('GET', 'data.txt', true)
+
+            // defining event listener for readyStateChnage event
+            request.onreadystatechange = function () {
+                // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+                // Value	State	            Description
+                // 0	    UNSENT	            Client has been created. open() not called yet.
+                // 1	    OPENED	            open() has been called.
+                // 2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+                // 3	    LOADING	            Downloading; responseText holds partial data.
+                // 4	    DONE	            The operation is complete.
+                console.log("Ready State: " + this.readyState);
+                // check if the request is completed and was successful
+                if (this.readyState == 4 && this.status == 200) {
+                    // inserting the response from the local document into the html element
+                    document.getElementById('punchline').innerHTML = this.responseText;
+                }
+            }
+            // send the request, without it, the button won't do anything useful
+            request.send();
+        }
+
+    </script>
+
+</body>
+
+</html>

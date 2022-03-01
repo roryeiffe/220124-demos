@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <button onclick = "getData()">Get Data</button>
+    <div class = "characters" id = "characters">
+        <h1>Characters:</h1>
+    </div>
+
+
+    <script>
+        function getData() {
+            // consume the api and populate the web page:
+            fetch('https://swapi.dev/api/people')
+            .then(response => response.json())
+            .then(function (data) {
+                var characters = data.results;
+                console.log(characters);
+                var html_chunk = ""
+                for(i in characters) {
+                    let character = characters[i];
+                    // adding more html code to the chunk
+                    html_chunk += "<h2>" + character.name + "</h2>";
+                    html_chunk += "<h3>" + character.height + "</h3>";
+                }
+                document.getElementById("characters").innerHTML += html_chunk;
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById("characters").innerHTML += "Something went wrong when trying to fetch the characters!";
+            })
+        }
+    </script>
+</body>
+</html>
